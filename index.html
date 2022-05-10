@@ -1,1 +1,111 @@
-<h1>hi</h1>
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>HTML Player</title>
+
+        <link rel="shortcut icon" id="favicon"/>
+
+        <style>
+
+            @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap');
+
+            h1 {
+                
+                font-family: "Roboto Mono";
+                font-size: 40px;
+
+            }
+
+        </style>
+
+        <script>
+
+            function run() {
+                document.getElementById("iframe").setAttribute("src", document.getElementById("url").value);
+            }
+
+            function loadpreset() {
+                document.getElementById("url").value = document.getElementById("presetList").value;
+            }
+
+            function changeTheme() {
+                var whiteOnDarkElements = document.getElementsByClassName("whiteOnDark")
+                if (document.getElementById("pageTheme").checked) {
+                    for (let i = 0; i < whiteOnDarkElements.length; i++) {
+                        whiteOnDarkElements[i].style.color = "white";
+                    }
+                    document.body.style.backgroundColor = "#1a1a1a";
+                } else {
+                    for (let i = 0; i < whiteOnDarkElements.length; i++) {
+                        whiteOnDarkElements[i].style.color = "black";
+                    }
+                    document.body.style.backgroundColor = "white";
+                }
+            }
+
+            function cloakTab() {
+                document.title = document.getElementById("cloakInput").value;
+                document.getElementById("cloakInput").value = "";
+            }
+
+            function cloakIcon() {
+                document.getElementById("favicon").setAttribute("href", document.getElementById("iconList").value);
+            }
+
+        </script>
+        
+    </head>
+
+    <body>
+
+        <h1 class="whiteOnDark">HTML Player</h1>
+        <p style="position: relative; top: -30px;" class="whiteOnDark">by Littleclaw</p>
+
+        <input type="text" size=50px placeholder="iFrame Source URL" id="url"/> <button style="width: 75px;" onclick="run()">Load</button>
+        <h3 style="font-family: 'Roboto Mono';" class="whiteOnDark">Presets</h3>
+        <select id="presetList" onchange="loadpreset()" style="width: 200px; position: relative; top: -10px;">
+
+            <option value="">Choose a preset...</option>
+            <option value="https://ruffle.rs/demo/">Flash Emulator</option>
+            <option value="https://morterra.com/">Morterra</option>
+            <option value="https://www.lexaloffle.com/bbs/widget.php?pid=24981">Stranded Isle</option>
+            <option value="https://www.crazygames.com/embed/minecraft-classic">Minecraft Classic</option>
+            <option value="https://www.crazygames.com/embed/krunker-io">Krunker</option>
+            <option value="https://www.crazygames.com/embed/shellshockersio">Shell Shockers</option>
+            <option value="https://static.arcadespot.com/wp-content/uploads/2016/09/sort-the-court/">Sort the Court</option>
+            <option value="https://rawcdn.githack.com/scheng123321/tmm-html5-cdn1/51a72f0faa2d9cd524a0c11b4ca368350f988458/slope/index.html">Slope</option>
+            <option value="https://rawcdn.githack.com/scheng123321/tmm-html5-cdn1/51a72f0faa2d9cd524a0c11b4ca368350f988458/vex3/index.html">Vex 3</option>
+            <option value="https://rawcdn.githack.com/scheng123321/tmm-html5-cdn1/51a72f0faa2d9cd524a0c11b4ca368350f988458/vex4/index.html">Vex 4</option>
+            <option value="//html5.gamedistribution.com/rvvASMiM/f120262ab72743039fbce88c1f370df8/?gd_zone_config=eyJwYXJlbnRVUkwiOiJodHRwczovL2h0bWw1LWdhbWVzLmlvLyIsInBhcmVudERvbWFpbiI6Imh0bWw1LWdhbWVzLmlvIiwidG9wRG9tYWluIjoiaHRtbDUtZ2FtZXMuaW8iLCJoYXNJbXByZXNzaW9uIjpmYWxzZSwibG9hZGVyRW5hYmxlZCI6dHJ1ZSwiaG9zdCI6Imh0bWw1LmdhbWVkaXN0cmlidXRpb24uY29tIiwidmVyc2lvbiI6IjEuNC43In0%253D">Vex 5</option>
+            <option value="https://rawcdn.githack.com/scheng123321/tmm-html5-cdn1/51a72f0faa2d9cd524a0c11b4ca368350f988458/madalin-cars-multiplayer/index.html">Madalin Cars Multiplayer</option>
+            <option value="https://html5-games.io/game/motox3m/">Moto X3M</option>
+            <option value="https://html5.gamedistribution.com/rvvASMiM/308d826f20034d7b972f25258c8d0a44/?gd_zone_config=eyJwYXJlbnRVUkwiOiJodHRwczovL2h0bWw1LWdhbWVzLmlvLyIsInBhcmVudERvbWFpbiI6Imh0bWw1LWdhbWVzLmlvIiwidG9wRG9tYWluIjoiaHRtbDUtZ2FtZXMuaW8iLCJoYXNJbXByZXNzaW9uIjpmYWxzZSwibG9hZGVyRW5hYmxlZCI6dHJ1ZSwiaG9zdCI6Imh0bWw1LmdhbWVkaXN0cmlidXRpb24uY29tIiwidmVyc2lvbiI6IjEuNC43In0%253D">Soccer Random</option>
+            <option value="//html5.gamedistribution.com/rvvASMiM/5c20635d0a5348a98f5a4eda5c023b79/?gd_zone_config=eyJwYXJlbnRVUkwiOiJodHRwczovL2h0bWw1LWdhbWVzLmlvLyIsInBhcmVudERvbWFpbiI6Imh0bWw1LWdhbWVzLmlvIiwidG9wRG9tYWluIjoiaHRtbDUtZ2FtZXMuaW8iLCJoYXNJbXByZXNzaW9uIjpmYWxzZSwibG9hZGVyRW5hYmxlZCI6dHJ1ZSwiaG9zdCI6Imh0bWw1LmdhbWVkaXN0cmlidXRpb24uY29tIiwidmVyc2lvbiI6IjEuNC43In0%253D">Tug The Table</option>  
+            <option value="https://www.crazygames.com/embed/learn-to-fly">Learn to Fly</option>
+            <option value="https://www.crazygames.com/embed/sports-heads-soccer">Soccer Heads</option>
+
+        </select>
+        <br>
+        <h3 style="font-family: 'Roboto Mono';" class="whiteOnDark">Settings</h3>
+        <input type="text" id="cloakInput" placeholder="Cloak Tab Title..." size=30px/> <button style="width: 90px;" onclick="cloakTab()">Cloak Title</button> 
+        <br>
+        <select id="iconList" style="width: 247px;">
+        
+            <option value="none">Cloak Tab Icon...</option>
+            <option value="google.ico">Google</option>
+            <option value="https://icons.iconarchive.com/icons/marcus-roberto/google-play/256/Google-Drive-icon.png">Google Drive</option>
+            <option value="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Google_Classroom_icon.svg/1200px-Google_Classroom_icon.svg.png">Google Classroom</option>
+        
+        </select>
+        <button style="width: 90px;" onclick="cloakIcon()">Cloak Icon</button>
+        <br>
+
+        <input type="checkbox" id="pageTheme" onchange="changeTheme()"/> <span class="whiteOnDark">Dark Theme</span>
+        <p style="position: relative; top: -15px; margin-top: 25px;" class="whiteOnDark">Container will appear broken until a URL is loaded.</p>
+
+        <iframe src="null" width=1200 height=640 id="iframe"></iframe>
+        <p class="whiteOnDark">Some preset applications may include advertisements that we are not associated with or collect revenue from.</p>
+
+    </body>
+</html>
